@@ -1,7 +1,7 @@
-# SAGE AGI Library
+
+# SAGE
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 ![Travis CI Build Status](https://travis-ci.com/sgalland/sage.svg?branch=master)
-
 Sierra Adventure Game Emulator written in Haxe
 
 ## Recommended Development Setup
