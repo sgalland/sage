@@ -31,6 +31,7 @@ haxelib install openfl
 ````
 
 ## Build Commands
+Use normal OpenFL build methods. Can even be built from Visual Studio Code. e.g.
 ````
-haxe build.hxml
+openfl test windows
 ````
