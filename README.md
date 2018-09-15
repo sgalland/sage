@@ -13,7 +13,7 @@ The standard environment used for development is as follows:
 * [Haxe Checkstyle (for vscode)](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-checkstyle)
 * [Lime/OpenFL Extension (for vscode)](https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension)
 
-Standard build hxml and debugging configuration is included.
+Use OpenFL to build (see below) and a debugging configuration is included for Visual Studio Code.
 
 ## Quick Commands to install VSCode Extensions
 ````
