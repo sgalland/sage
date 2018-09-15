@@ -1,4 +1,4 @@
-# SAGE AGI Library
+# SAGE
 Sierra Adventure Game Emulator written in Haxe
 
 ## Recommended Development Setup
