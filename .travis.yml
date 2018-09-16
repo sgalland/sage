@@ -19,4 +19,4 @@ install:
   - haxelib install hxcpp
 
 script:
-  - openfl test linux
+  - haxelib run openfl test linux
