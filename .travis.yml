@@ -20,4 +20,4 @@ install:
   - echo "y" | haxelib run openfl setup &> log.txt || cat log.txt
 
 script:
-  - openfl test linux
+  - haxelib run openfl test linux
