@@ -17,3 +17,6 @@ install:
   - haxelib git sage-agi https://github.com/sgalland/sage-agi.git
   - haxelib install openfl
   - haxelib install hxcpp
+
+script:
+  - openfl test linux
