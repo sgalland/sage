@@ -1,0 +1,97 @@
+{
+    "checks": [
+        {
+            "type": "MultipleVariableDeclarations",
+            "props": {
+                "severity": "WARNING"
+            }
+        },
+        {
+            "type": "UnusedLocalVar",
+            "props": {
+                "severity": "WARNING"
+            }
+        },
+        {
+            "type": "DefaultComesLast",
+            "props": {
+                "severity": "WARNING"
+            }
+        },
+        {
+            "type": "ConstantName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$",
+                "tokens": [
+                    "INLINE"
+                ]
+            }
+        },
+        {
+            "type": "LocalVariableName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^[a-z][a-zA-Z0-9]*$"
+            }
+        },
+        {
+            "type": "ParameterName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^[a-z][a-zA-Z0-9]*$"
+            }
+        },
+        {
+            "type": "TypeName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^[A-Z]+[a-zA-Z0-9]*$",
+                "tokens": [
+                    "CLASS",
+                    "ENUM",
+                    "TYPEDEF"
+                ]
+            }
+        },
+        {
+            "type": "TypeName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^I[A-Z]+[a-zA-Z0-9]*$",
+                "tokens": [
+                    "INTERFACE"
+                ]
+            }
+        },
+        {
+            "type": "MethodName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^[a-z][a-zA-Z0-9]*$",
+                "tokens": [
+                    "PUBLIC",
+                    "PRIVATE"
+                ]
+            }
+        },
+        {
+            "type": "MemberName",
+            "props": {
+                "severity": "ERROR",
+                "format": "^[a-z][a-zA-Z0-9]*$",
+                "tokens": [
+                    "PUBLIC",
+                    "PRIVATE",
+                    "CLASS"
+                ]
+            }
+        },
+        {
+            "type": "Type",
+            "props": {
+                "severity": "ERROR"
+            }
+        }
+    ]    
+}
