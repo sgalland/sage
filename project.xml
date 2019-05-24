@@ -14,5 +14,7 @@
 	</section>
 	
 	<assets path="Assets" rename="assets" />
+
+	<postbuild command="haxelib run checkstyle -s Source -detect checkstyle.json" />
 	
 </project>

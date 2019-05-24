@@ -1,97 +1,223 @@
 {
-    "checks": [
-        {
-            "type": "MultipleVariableDeclarations",
-            "props": {
-                "severity": "WARNING"
-            }
-        },
-        {
-            "type": "UnusedLocalVar",
-            "props": {
-                "severity": "WARNING"
-            }
-        },
-        {
-            "type": "DefaultComesLast",
-            "props": {
-                "severity": "WARNING"
-            }
-        },
-        {
-            "type": "ConstantName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$",
-                "tokens": [
-                    "INLINE"
-                ]
-            }
-        },
-        {
-            "type": "LocalVariableName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^[a-z][a-zA-Z0-9]*$"
-            }
-        },
-        {
-            "type": "ParameterName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^[a-z][a-zA-Z0-9]*$"
-            }
-        },
-        {
-            "type": "TypeName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^[A-Z]+[a-zA-Z0-9]*$",
-                "tokens": [
-                    "CLASS",
-                    "ENUM",
-                    "TYPEDEF"
-                ]
-            }
-        },
-        {
-            "type": "TypeName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^I[A-Z]+[a-zA-Z0-9]*$",
-                "tokens": [
-                    "INTERFACE"
-                ]
-            }
-        },
-        {
-            "type": "MethodName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^[a-z][a-zA-Z0-9]*$",
-                "tokens": [
-                    "PUBLIC",
-                    "PRIVATE"
-                ]
-            }
-        },
-        {
-            "type": "MemberName",
-            "props": {
-                "severity": "ERROR",
-                "format": "^[a-z][a-zA-Z0-9]*$",
-                "tokens": [
-                    "PUBLIC",
-                    "PRIVATE",
-                    "CLASS"
-                ]
-            }
-        },
-        {
-            "type": "Type",
-            "props": {
-                "severity": "ERROR"
-            }
-        }
-    ]    
+	"extendsConfigPath": "",
+	"defineCombinations": [],
+	"defaultSeverity": "INFO",
+	"baseDefines": [],
+	"version": 1,
+	"exclude": {},
+	"checks": [
+		{
+			"props": {},
+			"type": "Anonymous"
+		},
+		{
+			"props": {},
+			"type": "AvoidStarImport"
+		},
+		{
+			"props": {},
+			"type": "Dynamic"
+		},
+		{
+			"props": {
+				"requireEmptyLineAfterPackage": false,
+				"requireEmptyLineAfterInterface": false,
+				"requireEmptyLineAfterAbstract": false,
+				"allowEmptyLineAfterSingleLineComment": true,
+				"max": 1,
+				"requireEmptyLineAfterClass": false,
+				"allowEmptyLineAfterMultiLineComment": true
+			},
+			"type": "EmptyLines"
+		},
+		{
+			"props": {
+				"enforceEmptyPackage": true
+			},
+			"type": "EmptyPackage"
+		},
+		{
+			"props": {
+				"none": [
+					"beforePackage",
+					"betweenImports",
+					"beforeUsing",
+					"typeDefinition",
+					"afterLeftCurly",
+					"beforeRightCurly"
+				],
+				"upto": [],
+				"defaultPolicy": "upto",
+				"exact": [],
+				"max": 1,
+				"ignore": [],
+				"atleast": [],
+				"skipSingleLineTypes": true
+			},
+			"type": "ExtendedEmptyLines"
+		},
+		{
+			"props": {
+				"requireParams": false,
+				"fieldType": "VARS",
+				"requireReturn": false,
+				"ignoreOverride": true,
+				"tokens": [
+					"ABSTRACT_DEF",
+					"CLASS_DEF",
+					"ENUM_DEF",
+					"INTERFACE_DEF",
+					"TYPEDEF_DEF"
+				],
+				"modifier": "PUBLIC",
+				"excludeNames": [
+					"new",
+					"toString"
+				]
+			},
+			"type": "FieldDocComment"
+		},
+		{
+			"props": {
+				"character": "tab",
+				"wrapPolicy": "larger",
+				"ignoreComments": false,
+				"ignoreConditionals": false,
+				"conditionalPolicy": "ignore"
+			},
+			"type": "Indentation"
+		},
+		{
+			"props": {
+				"character": "tab",
+				"ignorePattern": "^$"
+			},
+			"type": "IndentationCharacter"
+		},
+		{
+			"props": {
+				"tokens": [
+					"CLASS_DEF",
+					"ENUM_DEF",
+					"ABSTRACT_DEF",
+					"INTERFACE_DEF",
+					"FUNCTION",
+					"FOR",
+					"IF",
+					"WHILE",
+					"SWITCH",
+					"TRY",
+					"CATCH"
+				],
+				"ignoreEmptySingleline": false,
+				"option": "eol"
+			},
+			"type": "LeftCurly"
+		},
+		{
+			"props": {
+				"max": 30,
+				"countEmpty": false
+			},
+			"type": "MethodLength"
+		},
+		{
+			"props": {
+				"ternaryOpPolicy": "ignore",
+				"unaryOpPolicy": "ignore",
+				"boolOpPolicy": "ignore",
+				"intervalOpPolicy": "ignore",
+				"assignOpPolicy": "around",
+				"functionArgPolicy": "ignore",
+				"bitwiseOpPolicy": "ignore",
+				"arithmeticOpPolicy": "ignore",
+				"compareOpPolicy": "ignore",
+				"arrowPolicy": "ignore"
+			},
+			"type": "OperatorWhitespace"
+		},
+		{
+			"props": {
+				"prohibitMeta": false
+			},
+			"type": "RedundantAccessMeta"
+		},
+		{
+			"props": {
+				"prohibitMeta": false
+			},
+			"type": "RedundantAllowMeta"
+		},
+		{
+			"props": {
+				"enforcePrivate": false,
+				"enforcePublic": false,
+				"enforcePublicPrivate": false
+			},
+			"type": "RedundantModifier"
+		},
+		{
+			"props": {
+				"commaPolicy": "after",
+				"semicolonPolicy": "after",
+				"dotPolicy": "none"
+			},
+			"type": "SeparatorWhitespace"
+		},
+		{
+			"props": {
+				"policy": "doubleAndInterpolation",
+				"allowException": true
+			},
+			"type": "StringLiteral"
+		},
+		{
+			"props": {
+				"format": "^\\s*(TODO|FIXME|HACK|XXX|BUG)"
+			},
+			"type": "TODOComment"
+		},
+		{
+			"props": {},
+			"type": "Trace"
+		},
+		{
+			"props": {},
+			"type": "TrailingWhitespace"
+		},
+		{
+			"props": {
+				"ignoreEnumAbstractValues": true
+			},
+			"type": "Type"
+		},
+		{
+			"props": {
+				"tokens": [
+					"ABSTRACT_DEF",
+					"CLASS_DEF",
+					"ENUM_DEF",
+					"INTERFACE_DEF",
+					"TYPEDEF_DEF"
+				]
+			},
+			"type": "TypeDocComment"
+		},
+		{
+			"props": {},
+			"type": "UnnecessaryConstructor"
+		},
+		{
+			"props": {
+				"moduleTypeMap": {},
+				"ignoreModules": []
+			},
+			"type": "UnusedImport"
+		},
+		{
+			"props": {},
+			"type": "UnusedLocalVar"
+		}
+	],
+	"numberOfCheckerThreads": 5
 }
