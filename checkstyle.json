@@ -130,7 +130,7 @@
 		},
 		{
 			"props": {
-				"max": 30,
+				"max": 75,
 				"countEmpty": false
 			},
 			"type": "MethodLength"
@@ -144,7 +144,7 @@
 				"assignOpPolicy": "around",
 				"functionArgPolicy": "ignore",
 				"bitwiseOpPolicy": "ignore",
-				"arithmeticOpPolicy": "around",
+				"arithmeticOpPolicy": "ignore",
 				"compareOpPolicy": "ignore",
 				"arrowPolicy": "ignore"
 			},
@@ -187,26 +187,6 @@
 		},
 		{
 			"props": {
-				"tokens": [
-					"CLASS_DEF",
-					"ENUM_DEF",
-					"ABSTRACT_DEF",
-					"TYPEDEF_DEF",
-					"INTERFACE_DEF",
-					"OBJECT_DECL",
-					"FUNCTION",
-					"FOR",
-					"WHILE",
-					"SWITCH",
-					"TRY",
-					"CATCH"
-				],
-				"option": "same"
-			},
-			"type": "RightCurly"
-		},
-		{
-			"props": {
 				"commaPolicy": "after",
 				"semicolonPolicy": "after",
 				"dotPolicy": "none"
@@ -220,7 +200,7 @@
 				"spaceForLoop": "should",
 				"ignoreRangeOperator": true,
 				"spaceWhileLoop": "any",
-				"spaceCatch": "should",
+				"spaceCatch": "any",
 				"spaceSwitchCase": "any",
 				"noSpaceAroundUnop": false
 			},

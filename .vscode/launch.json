@@ -8,7 +8,7 @@
             "name": "Hxcpp",
             "type": "hxcpp",
             "request": "launch",
-            "program": "${workspaceRoot}/export/windows/bin/SAGE"
+            "program": "${workspaceRoot}/Export/windows/bin/SAGE"
         }
     ]
 }
