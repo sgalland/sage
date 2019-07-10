@@ -88,7 +88,7 @@ class Main extends Sprite {
 		var pic = new AGIPicture(file);
 		var pixs = pic.getPicturePixels().toArray();
 		AGIColorConverter.convertPixelsToRGB(pixs);
-		render(this, 0, 0, 320, 200, pixs, AGIColor.getColorByDosColor(15));
+		render(this, 0, 0, 320, 200, pixs, AGIColor.getColorByDosColor(0)); // To render a pic in OpenFL the background color must be 0 with transparency off
 	}
 
 	static function render(stage:Sprite, x:Int, y:Int, width:Int, height:Int, bytes:Array<Int>, transparentColor:AGIColor) {
@@ -105,8 +105,8 @@ class Main extends Sprite {
 		data.setPixels(rect, byteArray);
 
 		var bitmap = new Bitmap(data);
-		bitmap.scaleX = 4;
-		bitmap.scaleY = 4;
+		// bitmap.scaleX = 4;
+		// bitmap.scaleY = 4;
 		bitmap.x = x;
 		bitmap.y = y;
 		stage.addChild(bitmap);
