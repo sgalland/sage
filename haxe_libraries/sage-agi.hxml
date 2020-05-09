@@ -1,4 +1,0 @@
-# @install: lix --silent download "gh://github.com/sgalland/sage-agi#b2daeecf164d9604b4308eb0c9d81d393d22d489" into sage-agi/0.0.1/github/b2daeecf164d9604b4308eb0c9d81d393d22d489
--lib dox
--cp ${HAXE_LIBCACHE}/sage-agi/0.0.1/github/b2daeecf164d9604b4308eb0c9d81d393d22d489/src/
--D sage-agi=0.0.1
