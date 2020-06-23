@@ -16,7 +16,7 @@ matrix:
 install:
   - haxelib git sage-agi https://github.com/sgalland/sage-agi.git
   - haxelib install openfl
-  - haxelib install hxcpp
+  - haxelib install checkstyle
   - echo "y" | haxelib run openfl setup &> log.txt || cat log.txt
 
 script:
