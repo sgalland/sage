@@ -6,7 +6,7 @@ os:
 dist: trusty
 
 haxe:
-  - "3.4.7"
+  - "4.1.2"
   - development # the latest build of the development branch in http://build.haxe.org/
 
 matrix:
