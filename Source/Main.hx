@@ -1,14 +1,10 @@
 package;
 
-import sage.agi.AGIResourceType;
-import sage.agi.AGIFileNameTools;
 import sage.agi.helpers.AGIColor;
 import openfl.geom.Rectangle;
 import openfl.display.BitmapData;
 import openfl.display.Bitmap;
-import sage.agi.resources.AGIFileReader;
 import openfl.display.Sprite;
-import sage.agi.resources.AGIView;
 import sage.agi.resources.AGIPicture;
 import sage.agi.interpreter.AGIInterpreter;
 
