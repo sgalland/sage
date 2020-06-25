@@ -1,5 +1,11 @@
 package;
 
+import openfl.ui.Keyboard;
+import lime.ui.KeyCode;
+import haxe.EnumTools;
+import lime.ui.ScanCode;
+import openfl.events.Event;
+import openfl.events.KeyboardEvent;
 import sage.agi.helpers.AGIColor;
 import openfl.geom.Rectangle;
 import openfl.display.BitmapData;
@@ -15,10 +21,27 @@ class Main extends Sprite {
 		super();
 
 		lime.app.Application.current.window.title = "SAGE";
+		AGIInterpreter.instance.initialize();
 
-		while (true) {
+		/**
+			Setup a main event loop
+		**/
+		stage.addEventListener(Event.ENTER_FRAME, function(event:Event) {
 			AGIInterpreter.instance.run();
-		}
+		});
+
+		stage.addEventListener(KeyboardEvent.KEY_DOWN, function(event:KeyboardEvent) {
+			if (event.keyCode == Keyboard.F1)
+				trace("F1!");
+			trace('convert: ${event.keyCode}');
+			trace('F1 keycode = ${KeyCode.F1}');
+			trace('charcode: ${event.charCode}');
+			trace('keycode: ${KeyCode.fromScanCode(ScanCode.F1)}');
+			trace('scancode: ${ScanCode.fromKeyCode(KeyCode.F1)}');
+			trace('keyboard code: ${Keyboard.F1}');
+			trace('ScanCode from keyboard code: ${ScanCode.fromKeyCode(event.keyCode)}');
+			trace('ScanCode from Keyboard?? ${ScanCode.fromKeyCode(Keyboard.F1)}');
+		});
 
 		// TODO: Keep this for later
 		// https://www.openfl.org/learn/npm/api/classes/openfl.display.bitmapdata.html#setpixels
