@@ -5,10 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Hxcpp",
+            "name": "Hxcpp (Windows)",
             "type": "hxcpp",
             "request": "launch",
-            "program": "${workspaceRoot}/export/windows/bin/SAGE"
+            "program": "${workspaceRoot}/Export/windows/bin/SAGE"
+        },
+        {
+            "name": "Hxcpp (Linux)",
+            "type": "hxcpp",
+            "request": "launch",
+            "program": "${workspaceRoot}/Export/linux/bin/SAGE"
         }
     ]
 }
