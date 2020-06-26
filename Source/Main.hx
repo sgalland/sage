@@ -28,6 +28,8 @@ class Main extends Sprite {
 		**/
 		stage.addEventListener(Event.ENTER_FRAME, function(event:Event) {
 			AGIInterpreter.instance.run();
+
+			render(this, 0, 0, 320, 200, AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray(), AGIColor.getColorByDosColor(0));
 		});
 
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, function(event:KeyboardEvent) {
