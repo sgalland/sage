@@ -1,5 +1,6 @@
 package;
 
+import openfl.Lib;
 import sage.agi.resources.AGIFileReader;
 import openfl.ui.Keyboard;
 import lime.ui.KeyCode;
@@ -19,11 +20,16 @@ import sage.agi.AGIResourceType;
 class Main extends Sprite {
 	var drawable:AGIPicture;
 
+	private static inline var NOMINAL_WIDTH:Int = 320;
+	private static inline var NOMINAL_HEIGHT:Int = 200;
+
 	public function new() {
 		super();
 
 		lime.app.Application.current.window.title = "SAGE";
 		AGIInterpreter.instance.initialize();
+		stage.window.width = 320 * 4;
+		stage.window.height = 200 * 4;
 
 		/**
 			Setup a main event loop
@@ -34,6 +40,22 @@ class Main extends Sprite {
 			var buffer = AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray();
 			AGIColorConverter.convertPixelsToRGB(buffer);
 			render(this, 0, 0, 320, 200, buffer, AGIColor.getColorByDosColor(0));
+		});
+
+		/** 
+			This is a copied answer, probably need to recode it to make sure it fits our needs:
+			@see https://community.openfl.org/t/resolved-what-is-the-trick-to-make-an-app-fit-all-screen-size/1035/20
+		**/
+		stage.addEventListener(Event.RESIZE, function(e:Event) {
+			var stageScaleX:Float = stage.stageWidth / NOMINAL_WIDTH;
+			var stageScaleY:Float = stage.stageHeight / NOMINAL_HEIGHT;
+
+			var stageScale:Float = Math.min(stageScaleX, stageScaleY);
+
+			Lib.current.x = 0;
+			Lib.current.y = 0;
+			Lib.current.scaleX = stageScale;
+			Lib.current.scaleY = stageScale;
 		});
 
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, function(event:KeyboardEvent) {
@@ -52,7 +74,7 @@ class Main extends Sprite {
 		// TODO: Keep this for later
 		// https://www.openfl.org/learn/npm/api/classes/openfl.display.bitmapdata.html#setpixels
 		// https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/BitmapData.html#setPixels()
-		try {			
+		try {
 			// var reader = new AGIFileReader();
 			// reader.loadDirectoryEntries(AGIResourceType.PICTURE);
 			// var data = new AGIPicture(reader.getFile(67)).getPicturePixels().toArray();
