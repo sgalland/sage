@@ -8,11 +8,15 @@
 	
 	<haxelib name="openfl" />
 	<haxelib name="sage-agi" />
-	<haxeflag name="-dce" value="full" />
 	
 	<section if="debug">
 		<haxelib name="hxcpp-debug-server" />
 	</section>
+
+	<section if="release">
+		<haxeflag name="-dce" value="full" />
+	</section>
+
 	
 	<assets path="Assets" rename="assets" />
 

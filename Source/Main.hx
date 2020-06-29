@@ -31,7 +31,9 @@ class Main extends Sprite {
 		stage.addEventListener(Event.ENTER_FRAME, function(event:Event) {
 			AGIInterpreter.instance.run();
 
-			// render(this, 0, 0, 320, 200, AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray(), AGIColor.getColorByDosColor(0));
+			var buffer = AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray();
+			AGIColorConverter.convertPixelsToRGB(buffer);
+			render(this, 0, 0, 320, 200, buffer, AGIColor.getColorByDosColor(0));
 		});
 
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, function(event:KeyboardEvent) {
@@ -51,11 +53,11 @@ class Main extends Sprite {
 		// https://www.openfl.org/learn/npm/api/classes/openfl.display.bitmapdata.html#setpixels
 		// https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/BitmapData.html#setPixels()
 		try {			
-			var reader = new AGIFileReader();
-			reader.loadDirectoryEntries(AGIResourceType.PICTURE);
-			var data = new AGIPicture(reader.getFile(67)).getPicturePixels().toArray();
-			AGIColorConverter.convertPixelsToRGB(data);
-			render(this, 0, 0, 320, 200, data, AGIColor.getColorByDosColor(15));
+			// var reader = new AGIFileReader();
+			// reader.loadDirectoryEntries(AGIResourceType.PICTURE);
+			// var data = new AGIPicture(reader.getFile(67)).getPicturePixels().toArray();
+			// AGIColorConverter.convertPixelsToRGB(data);
+			// render(this, 0, 0, 320, 200, data, AGIColor.getColorByDosColor(15));
 
 			// var data:Array<Int> = [for (i in drawable.getPicturePixels()) i];
 			// AGIColorConverter.convertPixelsToRGB(data);
