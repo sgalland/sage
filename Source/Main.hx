@@ -37,6 +37,9 @@ class Main extends Sprite {
 		stage.addEventListener(Event.ENTER_FRAME, function(event:Event) {
 			AGIInterpreter.instance.run();
 
+			// Control the framerate by setting it to the delay * 1/20 of a second (50ms).
+			stage.window.frameRate = AGIInterpreter.instance.VARIABLES[10] * 50;
+
 			var buffer = AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray();
 			AGIColorConverter.convertPixelsToRGB(buffer);
 			render(this, 0, 0, 320, 200, buffer, AGIColor.getColorByDosColor(0));
