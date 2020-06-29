@@ -1,5 +1,6 @@
 package;
 
+import sage.agi.resources.AGIFileReader;
 import openfl.ui.Keyboard;
 import lime.ui.KeyCode;
 import haxe.EnumTools;
@@ -13,6 +14,7 @@ import openfl.display.Bitmap;
 import openfl.display.Sprite;
 import sage.agi.resources.AGIPicture;
 import sage.agi.interpreter.AGIInterpreter;
+import sage.agi.AGIResourceType;
 
 class Main extends Sprite {
 	var drawable:AGIPicture;
@@ -29,7 +31,7 @@ class Main extends Sprite {
 		stage.addEventListener(Event.ENTER_FRAME, function(event:Event) {
 			AGIInterpreter.instance.run();
 
-			render(this, 0, 0, 320, 200, AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray(), AGIColor.getColorByDosColor(0));
+			// render(this, 0, 0, 320, 200, AGIInterpreter.instance.RENDERER.videoBackBuffer.toArray(), AGIColor.getColorByDosColor(0));
 		});
 
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, function(event:KeyboardEvent) {
@@ -48,16 +50,21 @@ class Main extends Sprite {
 		// TODO: Keep this for later
 		// https://www.openfl.org/learn/npm/api/classes/openfl.display.bitmapdata.html#setpixels
 		// https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/BitmapData.html#setPixels()
-		// try {
-		// 	var data:Array<Int> = [for (i in drawable.getPicturePixels()) i];
+		try {			
+			var reader = new AGIFileReader();
+			reader.loadDirectoryEntries(AGIResourceType.PICTURE);
+			var data = new AGIPicture(reader.getFile(67)).getPicturePixels().toArray();
+			AGIColorConverter.convertPixelsToRGB(data);
+			render(this, 0, 0, 320, 200, data, AGIColor.getColorByDosColor(15));
 
-		// 	AGIColorConverter.convertPixelsToRGB(data);
-		// 	render(this, 0, 0, 320, 200, data, AGIColor.getColorByDosColor(15));
-		// 	// render(this, target.width * 4 + 10, 0, target.width, target.height, target.data, target.transparentColor);
-		// 	// render(this, target.width * 8 + 20, 0, target.width, target.height, target.data, target.transparentColor);
-		// } catch (e:String) {
-		// 	trace(e);
-		// }
+			// var data:Array<Int> = [for (i in drawable.getPicturePixels()) i];
+			// AGIColorConverter.convertPixelsToRGB(data);
+			// render(this, 0, 0, 320, 200, data, AGIColor.getColorByDosColor(15));
+			// render(this, target.width * 4 + 10, 0, target.width, target.height, target.data, target.transparentColor);
+			// render(this, target.width * 8 + 20, 0, target.width, target.height, target.data, target.transparentColor);
+		} catch (e:String) {
+			trace(e);
+		}
 	}
 
 	static function render(stage:Sprite, x:Int, y:Int, width:Int, height:Int, bytes:Array<Int>, transparentColor:AGIColor) {
