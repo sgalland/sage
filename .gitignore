@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/.vs/SAGE
+/x64/Debug
+/SAGE/x64/Debug
